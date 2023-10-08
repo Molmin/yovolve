@@ -1,0 +1,17 @@
+.topbar {
+    background-color: black;
+}
+
+span {
+    color: white;
+}
+
+.header {
+    margin-left: 20px;
+}
+
+.version {
+    position: absolute;
+    margin-right: 20px;
+    right: 0;
+}
