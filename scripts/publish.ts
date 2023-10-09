@@ -7,7 +7,7 @@ import { npmPublish, type Results } from "@jsdevtools/npm-publish"
 
 const { NPM_SECRET } = process.env
 
-console.log(NPM_SECRET)
+console.log(process.env)
 
 const packagesDir = path.join(
     dirname(fileURLToPath(import.meta.url)),
