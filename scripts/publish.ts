@@ -30,7 +30,7 @@ for (let dir of packages) {
     }
     console.log(`Try publishing package: ${packageName} (${newVersion})`)
     const result: Results = await npmPublish({
-        token: NPM_SECRET,
+        token: NPM_SECRET as string,
         access: 'public',
         package: packagePath,
     })
