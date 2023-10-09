@@ -26,4 +26,4 @@ jobs:
       if: ${{ github.event_name == 'push' }}
       run: ts-node scripts/publish.ts
       env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NPM_SECRET: ${{ secrets.NPM_SECRET }}
