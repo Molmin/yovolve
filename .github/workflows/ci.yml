@@ -18,6 +18,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
+    - name: Install
+      run: |
+        npm i
+        npm i ts-node -g
     - name: Publish packages to NPM
       if: ${{ github.event_name == 'push' }}
       run: ts-node scripts/publish.ts
