@@ -1,6 +1,6 @@
 {
   "name": "yovolve",
-  "version": "1.0.0",
+  "version": "0.0.5",
   "description": "",
   "type": "module",
   "scripts": {
@@ -9,7 +9,19 @@
     "build": "vite build",
     "serve": "vite preview"
   },
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molmin/yovolve.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Milmon <milmon@qq.com>",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/molmin/yovolve/issues"
+  },
+  "homepage": "https://github.com/molmin/yovolve#readme",
   "devDependencies": {
     "solid-devtools": "^0.27.3",
     "typescript": "^5.1.3",

@@ -1,11 +1,20 @@
 {
   "name": "@yovolve/core",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molmin/yovolve.git"
+  },
+  "author": "Milmon <milmon@qq.com>",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/molmin/yovolve/issues"
+  },
+  "homepage": "https://github.com/molmin/yovolve#readme"
 }

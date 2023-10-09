@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "npm run dev --workspace=yovolve"
@@ -11,9 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/molmin/yovolve.git"
   },
-  "keywords": [
-    "game"
-  ],
   "author": "Milmon <milmon@qq.com>",
   "license": "AGPL-3.0-or-later",
   "bugs": {
@@ -22,5 +20,11 @@
   "homepage": "https://github.com/molmin/yovolve#readme",
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "@jsdevtools/npm-publish": "^2.2.2"
+  },
+  "dependencies": {
+    "latest-version": "^7.0.0"
+  }
 }

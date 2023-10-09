@@ -9,9 +9,13 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "types": [
+      "node",
       "vite/client"
     ],
     "noEmit": true,
     "isolatedModules": true
+  },
+  "ts-node": {
+    "esm": true
   }
 }
