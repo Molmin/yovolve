@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "strict": true,
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "jsxImportSource": "solid-js",
     "types": [
       "node",

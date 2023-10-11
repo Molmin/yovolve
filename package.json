@@ -22,7 +22,8 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@jsdevtools/npm-publish": "^2.2.2"
+    "@jsdevtools/npm-publish": "^2.2.2",
+    "@types/node": "^20.8.3"
   },
   "dependencies": {
     "latest-version": "^7.0.0"

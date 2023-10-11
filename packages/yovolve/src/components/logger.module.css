@@ -1,0 +1,27 @@
+.container {
+    width: var(--width-logger);
+    right: 0;
+    position: absolute;
+    margin: 10px;
+}
+
+.tab {
+    cursor: pointer;
+    margin: 3px;
+    color: rgb(150, 150, 150);
+}
+
+.tab:hover {
+    color: black;
+}
+
+.selectTab {
+    cursor: pointer;
+    margin: 3px;
+    color: var(--color-topic);
+    font-weight: bold;
+}
+
+.logger {
+    font-family: 'Courier New', sans-serif;
+}
