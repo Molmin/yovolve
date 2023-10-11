@@ -1,4 +1,8 @@
-.game {
-    --width-logger: 20%;
+.container {
     --color-topic: rgb(196, 106, 28);
+    margin: 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 5fr 2fr;
+    grid-template-rows: calc(100% - 50px);
 }

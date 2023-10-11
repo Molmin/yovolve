@@ -3,7 +3,8 @@ export interface Item {
     name: string
     display: string
     description: string
-    craftFrom: Record<number, number>
-    requireMulti: number
-    everySecond: Record<number, number>
+    craftFrom: Record<string | number, number>
+    requireMulti?: number
+    everySecond: Record<string | number, number>
+    count?: number
 }

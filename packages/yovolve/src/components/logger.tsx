@@ -8,7 +8,7 @@ const Logger: Component = () => {
     const [displayLogger, setDisplayLogger] = createSignal<'event' | 'log'>('event');
 
     return (
-        <div class={styles.container}>
+        <div>
             <span
                 class={displayLogger() === 'event' ? styles.selectTab : styles.tab}
                 onClick={() => { setDisplayLogger('event') }}
