@@ -1,7 +1,7 @@
 import { type Component, createContext, createSignal } from 'solid-js'
 import { YovolveConfig, startService } from '@yovolve/core'
 import defaultConfig from '@yovolve/utils/modes/test'
-import styles from './game.module.css'
+import styles from './Game.module.css'
 import Logger from './Logger'
 import ItemOverview from './ItemOverview'
 import Dashboard from './Dashboard'
