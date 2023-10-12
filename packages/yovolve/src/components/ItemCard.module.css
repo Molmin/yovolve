@@ -1,0 +1,35 @@
+.container {
+    position: relative;
+    width: 180px;
+    height: 50px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 8px;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+.container:hover {
+    background-color: rgb(211, 211, 211);
+}
+
+.name {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.countContainer {
+    position: absolute;
+    background-color: rgb(181, 181, 181);
+    padding: 0 5px;
+    top: 3px;
+    right: 3px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.countNumber {
+    margin: 0;
+    font-size: 15px;
+}

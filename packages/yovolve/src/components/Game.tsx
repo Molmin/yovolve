@@ -25,11 +25,11 @@ export function newDebugLog(content: string) {
 export const YovolveContext = createContext<() => YovolveConfig>(() => defaultConfig)
 const [service, updateService] = createSignal<YovolveConfig>(defaultConfig)
 
-const Game: Component = () => {
-    startService(service(), (config: YovolveConfig) => {
-        updateService(rebuildObject(config))
-    })
+export const Yovolve = await startService(service(), (config: YovolveConfig) => {
+    updateService(rebuildObject(config))
+})
 
+const Game: Component = () => {
     return (
         <div class={styles.container}>
             <YovolveContext.Provider value={service}>
