@@ -1,5 +1,4 @@
 import { YovolveConfig } from './libs/config'
-import { Item } from './libs/item'
 
 function handle(config: YovolveConfig): YovolveConfig {
     config.items[0].count = (config.items[0].count ?? 0) + 1
