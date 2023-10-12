@@ -1,7 +1,7 @@
 import { type Component, For, useContext } from 'solid-js'
 import type { Item } from '@yovolve/core';
-import { YovolveContext } from './game'
-import styles from './overview.module.css'
+import { YovolveContext } from './Game'
+import styles from './ItemOverview.module.css'
 
 const ItemOverview: Component = () => {
     const service = useContext(YovolveContext)

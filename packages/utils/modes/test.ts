@@ -16,7 +16,7 @@ const config: YovolveConfig = {
             name: "strong",
             display: "赵强",
             description: "很强",
-            craftFrom: { "yo-yo": 10 },
+            craftFrom: { "circle": 10 },
             everySecond: {},
         },
     ],

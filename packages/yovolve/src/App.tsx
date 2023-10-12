@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js'
-import TopBar from './components/topbar'
-import Game from './components/game'
+import TopBar from './components/TopBar'
+import Game from './components/Game'
 
 const App: Component = () => {
     return (

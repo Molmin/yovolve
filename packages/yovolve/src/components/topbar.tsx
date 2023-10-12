@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js'
-import styles from './topbar.module.css'
+import styles from './TopBar.module.css'
 
 const TopBar: Component = () => {
     return (<div class={styles.topbar}>

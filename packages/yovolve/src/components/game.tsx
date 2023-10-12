@@ -2,9 +2,9 @@ import { type Component, createContext, createSignal } from 'solid-js'
 import { YovolveConfig, startService } from '@yovolve/core'
 import defaultConfig from '@yovolve/utils/modes/test'
 import styles from './game.module.css'
-import Logger from './logger'
-import ItemOverview from './overview'
-import Dashboard from './dashboard'
+import Logger from './Logger'
+import ItemOverview from './ItemOverview'
+import Dashboard from './Dashboard'
 import { rebuildObject } from '@yovolve/utils'
 
 export interface Logs {

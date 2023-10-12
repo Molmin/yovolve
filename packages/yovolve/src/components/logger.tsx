@@ -1,6 +1,6 @@
 import { type Component, useContext, createSignal, For, Switch, Match } from 'solid-js'
-import styles from './logger.module.css'
-import { LoggerContext } from './game'
+import styles from './Logger.module.css'
+import { LoggerContext } from './Game'
 
 const Logger: Component = () => {
     const logs = useContext(LoggerContext)
