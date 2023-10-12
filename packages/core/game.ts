@@ -1,20 +1,17 @@
 import { YovolveConfig } from './libs/config'
 import { Item } from './libs/item'
 
-export class YovolveService {
-    constructor(public config: YovolveConfig) { }
+function handle(config: YovolveConfig): YovolveConfig {
+    config.items[0].count = (config.items[0].count ?? 0) + 1
+    return config
+}
 
-    startService() {
-        setInterval(this.handler, 1000)
-    }
-
-    findItem(id: number | string): Item | null {
-        const result = this.config.items.filter(
-            item => (typeof id === 'string' ? item.name : item.id) == id
-        )
-        if (result.length > 0) return result[0]
-        else return null
-    }
-
-    handler() { }
+export function startService(
+    config: YovolveConfig,
+    updateConfig: (config: YovolveConfig) => void
+) {
+    setInterval(() => {
+        config = handle(config)
+        updateConfig(config)
+    }, 1000)
 }

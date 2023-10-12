@@ -1,4 +1,4 @@
-export type { Item } from './libs/item'
-export type { YovolveConfig } from './libs/config'
+export * from './libs/item'
+export * from './libs/config'
 
-export { YovolveService } from './game'
+export { startService } from './game'

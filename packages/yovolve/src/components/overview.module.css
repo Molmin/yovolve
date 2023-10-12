@@ -1,0 +1,12 @@
+.item {
+    margin: 0;
+    padding: 0 10px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 50px 50px;
+    grid-template-rows: auto;
+}
+
+.item:nth-child(odd) {
+    background-color: rgb(205, 205, 205);
+}

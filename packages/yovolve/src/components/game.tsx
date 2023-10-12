@@ -1,10 +1,11 @@
 import { type Component, createContext, createSignal } from 'solid-js'
-import { YovolveService } from '@yovolve/core'
+import { YovolveConfig, startService } from '@yovolve/core'
 import defaultConfig from '@yovolve/utils/modes/test'
 import styles from './game.module.css'
 import Logger from './logger'
 import ItemOverview from './overview'
 import Dashboard from './dashboard'
+import { rebuildObject } from '@yovolve/utils'
 
 export interface Logs {
     event: string[]
@@ -21,18 +22,20 @@ export function newDebugLog(content: string) {
     setLogs({ event: logs().event, log: logs().log.concat([content]) })
 }
 
-export const YovolveServiceContext = createContext<() => YovolveService>(() => new YovolveService(defaultConfig))
+export const YovolveContext = createContext<() => YovolveConfig>(() => defaultConfig)
+const [service, updateService] = createSignal<YovolveConfig>(defaultConfig)
 
 const Game: Component = () => {
-    const service = new YovolveService(defaultConfig)
-    service.startService()
+    startService(service(), (config: YovolveConfig) => {
+        updateService(rebuildObject(config))
+    })
 
     return (
         <div class={styles.container}>
-            <YovolveServiceContext.Provider value={() => service}>
+            <YovolveContext.Provider value={service}>
                 <ItemOverview />
                 <Dashboard />
-            </YovolveServiceContext.Provider>
+            </YovolveContext.Provider>
             <LoggerContext.Provider value={logs}>
                 <Logger />
             </LoggerContext.Provider>

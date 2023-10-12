@@ -7,4 +7,5 @@ export interface Item {
     requireMulti?: number
     everySecond: Record<string | number, number>
     count?: number
+    speed?: number
 }
