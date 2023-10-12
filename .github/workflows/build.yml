@@ -1,4 +1,4 @@
-name: CI
+name: Build
 
 on:
   push:
@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:    
       - main
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -18,19 +21,19 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
-    - name: Install
+    - name: Install And Build
       run: |
         npm i
         npm i ts-node -g
         npm run build
         cat packages/yovolve/dist/index.html
-    - name: Publish packages to NPM
-      if: ${{ github.event_name == 'push' }}
-      run: ts-node scripts/publish.ts
-      env:
-        NPM_SECRET: ${{ secrets.NPM_SECRET }}
     - name: Deploy to GitHub Pages
       if: ${{ github.event_name == 'push' }}
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: packages/yovolve/dist
+    - name: Publish Packages to NPM
+      if: ${{ github.event_name == 'push' }}
+      run: ts-node scripts/publish.ts
+      env:
+        NPM_SECRET: ${{ secrets.NPM_SECRET }}
