@@ -22,8 +22,13 @@ jobs:
       run: |
         npm i
         npm i ts-node -g
+        npm run build
     - name: Publish packages to NPM
       if: ${{ github.event_name == 'push' }}
       run: ts-node scripts/publish.ts
       env:
         NPM_SECRET: ${{ secrets.NPM_SECRET }}
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: packages/yovolve/dist

@@ -6,7 +6,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "npm run dev --workspace=yovolve"
+    "dev": "npm run dev --workspace yovolve",
+    "build": "npm run build --workspace yovolve"
   },
   "repository": {
     "type": "git",
