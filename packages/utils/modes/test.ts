@@ -38,6 +38,15 @@ const config: YovolveConfig = {
             costMulti: { "circle": 3 },
             everySecond: { "circle": 2.5 },
         },
+        {
+            id: 5,
+            name: "alaska",
+            display: "树春",
+            description: "很肥",
+            craftFrom: { "circle": 100, "hunk": 1 },
+            costMulti: { "circle": 2, "hunk": 1 },
+            everySecond: { "circle": -5, "hunk": 1 },
+        },
     ],
 }
 
