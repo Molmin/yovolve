@@ -43,9 +43,9 @@ const config: YovolveConfig = {
             name: "alaska",
             display: "树春",
             description: "很肥",
-            craftFrom: { "circle": 100, "hunk": 1 },
-            costMulti: { "circle": 2, "hunk": 1 },
-            everySecond: { "circle": -5, "hunk": 1 },
+            craftFrom: { "circle": 1000, "hunk": 1 },
+            costMulti: { "circle": 10, "hunk": 1 },
+            everySecond: { "circle": -50, "hunk": 10 },
         },
     ],
 }
