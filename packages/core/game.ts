@@ -2,7 +2,7 @@ import { YovolveConfig } from './libs/config'
 import { ModelReturn } from './libs/model'
 
 function handle(config: YovolveConfig): YovolveConfig {
-    config.items[0].count = (config.items[0].count ?? 0) + 1
+    // config.items[0].count = (config.items[0].count ?? 0) + 1
     return config
 }
 
@@ -18,7 +18,7 @@ export async function startService(
     let retFunctions: Record<string, Function> = {}
     for (let [funcName, func] of Object.entries(functions))
         retFunctions[funcName] = (...args: any[]) => {
-            const res: ModelReturn = func(config, ...args)
+            const res: ModelReturn<any> = func(config, ...args)
             if (res.updatedConfig && res.config) updateConfig(res.config)
             if (res.return) return res.return
         }

@@ -1,1 +1,1 @@
-export * from './clickItem'
+export * from './item'

@@ -13,6 +13,14 @@
     background-color: rgb(211, 211, 211);
 }
 
+.disabledContainer {
+    background-color: rgb(255, 216, 216);
+}
+
+.disabledContainer:hover {
+    background-color: rgb(255, 216, 216);
+}
+
 .name {
     text-align: center;
     font-size: 1rem;
@@ -32,4 +40,15 @@
 .countNumber {
     margin: 0;
     font-size: 15px;
+}
+
+.hoverCard {
+    z-index: 100000;
+    position: absolute;
+    left: -10px;
+    width: 180px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: white;
 }

@@ -1,7 +1,7 @@
 import { YovolveConfig } from "./config";
 
-export interface ModelReturn {
+export interface ModelReturn<T> {
     updatedConfig: boolean
     config?: YovolveConfig
-    return?: any
+    return: T
 }
