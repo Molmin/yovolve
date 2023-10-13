@@ -1,22 +1,24 @@
-import { Show, type Component, createSignal, For } from 'solid-js'
+import { Show, type Component, createSignal, For, useContext } from 'solid-js'
 import styles from './ItemCard.module.css'
-import { Item, ItemId } from '@yovolve/core';
-import { Yovolve } from './Game';
+import { Item, ItemId, checkCanClickItem, clickItem, findItem, getCraftItemCost } from '@yovolve/core'
+import { YovolveContext, updateConfig } from './Game'
 
 const ItemCard: Component<{
     item: Item
 }> = props => {
     const { item } = props
 
+    const service = useContext(YovolveContext)
+
     const [isHover, setIsHover] = createSignal<boolean>(false);
 
     return (
         <div
-            class={(Yovolve.checkCanClickItem(item.id)
+            class={(checkCanClickItem(service(), item.id)
                 ? '' : styles.disabledContainer + ' ') + styles.container}
             onClick={() => {
-                if (Yovolve.checkCanClickItem(item.id))
-                    Yovolve.clickItem(item.id)
+                if (checkCanClickItem(service(), item.id))
+                    clickItem(service(), item.id, updateConfig)
             }}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
@@ -29,11 +31,11 @@ const ItemCard: Component<{
                 <div class={styles.hoverCard}>
                     <p>{item.display}</p>
                     <For
-                        each={Object.entries(Yovolve.getCraftItemCost(item.id))}
+                        each={Object.entries(getCraftItemCost(service(), item.id))}
                         fallback={<></>}
                     >
                         {s => {
-                            const it = Yovolve.findItem(s[0] as ItemId) as Item;
+                            const it = findItem(service(), s[0] as ItemId) as Item;
                             return <p>{it.display}: {s[1] as number}</p>
                         }}
                     </For>
