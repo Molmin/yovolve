@@ -1,7 +1,7 @@
 import { Show, type Component, createSignal, For, useContext } from 'solid-js'
 import styles from './ItemCard.module.css'
 import { Item, ItemId, checkCanClickItem, clickItem, findItem, getCraftItemCost } from '@yovolve/core'
-import { YovolveContext, updateConfig } from './Game'
+import { YovolveContext, limitRate, pushLimitRate, updateConfig } from './Game'
 
 const ItemCard: Component<{
     item: Item
@@ -17,8 +17,13 @@ const ItemCard: Component<{
             class={(checkCanClickItem(service(), item.id)
                 ? '' : styles.disabledContainer + ' ') + styles.container}
             onClick={() => {
-                if (checkCanClickItem(service(), item.id))
+                if (
+                    checkCanClickItem(service(), item.id)
+                    && limitRate(100, 1) && limitRate(1000, 8) && limitRate(5000, 25)
+                ) {
+                    pushLimitRate()
                     clickItem(service(), item.id, updateConfig)
+                }
             }}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}

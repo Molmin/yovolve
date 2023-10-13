@@ -28,7 +28,17 @@ const [service, updateService] = createSignal<YovolveConfig>(defaultConfig)
 export function updateConfig(config: YovolveConfig): void {
     updateService(rebuildObject(config))
 }
-startService(service(), updateConfig)
+startService(service, updateConfig)
+
+let clickTime: number[] = []
+export function limitRate(time: number, count: number) {
+    const now = new Date().getTime();
+    for (let t of clickTime) if (t > now - time) count--
+    return count > 0
+}
+export function pushLimitRate() {
+    clickTime.push(new Date().getTime())
+}
 
 const Game: Component = () => {
     return (
