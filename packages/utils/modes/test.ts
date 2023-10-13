@@ -18,7 +18,7 @@ const config: YovolveConfig = {
             description: "很强",
             craftFrom: { "circle": 2 },
             costMulti: { "circle": 2 },
-            everySecond: {},
+            everySecond: { "circle": 1 },
         },
     ],
 }

@@ -7,7 +7,7 @@ export interface Item {
     description: string
     craftFrom: Record<ItemId, number>
     costMulti?: Record<ItemId, number>
-    everySecond: Record<ItemId, number>
+    everySecond?: Record<ItemId, number>
     count?: number
     speed?: number
 }

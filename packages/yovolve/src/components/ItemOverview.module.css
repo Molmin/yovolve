@@ -10,3 +10,11 @@
 .item:nth-child(odd) {
     background-color: rgb(205, 205, 205);
 }
+
+.countUp {
+    color: green;
+}
+
+.countDown {
+    color: red;
+}
