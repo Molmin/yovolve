@@ -2,6 +2,7 @@ import { Show, type Component, createSignal, For, useContext } from 'solid-js'
 import styles from './ItemCard.module.css'
 import { Item, ItemId, checkCanClickItem, clickItem, findItem, getCraftItemCost } from '@yovolve/core'
 import { YovolveContext, limitRate, pushLimitRate, updateConfig } from './Game'
+import { NumberDisplay } from '@yovolve/utils';
 
 const ItemCard: Component<{
     item: Item
@@ -30,7 +31,7 @@ const ItemCard: Component<{
         >
             <p class={styles.name}>{item.display}</p>
             <div class={styles.countContainer}>
-                <span class={styles.countNumber}>{item.count ?? 0}</span>
+                <span class={styles.countNumber}>{NumberDisplay(item.count ?? 0)}</span>
             </div>
             <Show when={isHover()}>
                 <div class={styles.hoverCard}>
@@ -41,7 +42,7 @@ const ItemCard: Component<{
                     >
                         {s => {
                             const it = findItem(service(), s[0] as ItemId) as Item;
-                            return <p>{it.display}: {s[1] as number}</p>
+                            return <p>{it.display}: {NumberDisplay(s[1] as number)}</p>
                         }}
                     </For>
                     <p>{item.description}</p>

@@ -27,7 +27,7 @@ export function getCraftItemCost(
     const item = findItem(config, id) as Item
     let ret: Record<ItemId, number> = {}
     for (let [it, cost] of Object.entries(item.craftFrom ?? {}))
-        ret[it] = cost * Math.pow((item.costMulti ?? {})[it] ?? 1, item.count ?? 0)
+        ret[it] = Math.ceil(cost * Math.pow((item.costMulti ?? {})[it] ?? 1, item.count ?? 0))
     return ret
 }
 
