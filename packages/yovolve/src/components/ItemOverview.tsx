@@ -18,7 +18,7 @@ const ItemOverview: Component = () => {
                             <span class={styles.countUp}>+{NumberDisplay(item.speed ?? 0)}</span>
                         </Match>
                         <Match when={(item.speed ?? 0) < 0}>
-                            <span class={styles.countDown}>{NumberDisplay(item.speed ?? 0)}</span>
+                            <span class={styles.countDown}>-{-NumberDisplay(item.speed ?? 0)}</span>
                         </Match>
                     </Switch>
                 </p>}
